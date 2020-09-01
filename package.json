@@ -1,0 +1,42 @@
+{
+  "name": "@neufa/neufa-suche",
+  "version": "1.0.0-alpha.1",
+  "description": "Demo - Demo Web Components",
+  "keywords": [],
+  "author": "dj schulze",
+  "license": "undefined",
+  "scripts": {
+    "dev": "webpack-dev-server --env.mode development",
+    "prod": "webpack --env.mode production",
+    "build": "webpack"
+  },
+  "publishConfig": {
+    "registry": "http://dev-tools.int.dfg.de/nexus/repository/dfg-npm/"
+  },
+  "files": [
+    "my-demo.js"
+  ],
+  "devDependencies": {
+    "@webcomponents/webcomponentsjs": "^2.4.3",
+    "copy-webpack-plugin": "^5.1.1",
+    "html-webpack-plugin": "^4.3.0",
+    "webpack": "^4.43.0",
+    "webpack-cli": "^3.3.11",
+    "webpack-dev-server": "^3.11.0",
+    "@vaadin/vaadin": "14.3.2"
+  },
+  "bundleDependencies": false,
+  "dependencies": {
+    "@polymer/iron-icon": "^3.0.1",
+    "@polymer/iron-icons": "^3.0.1",
+    "@polymer/paper-icon-button": "^3.0.2",
+    "@polymer/paper-item": "^3.0.1",
+    "@polymer/paper-listbox": "^3.0.1",
+    "@polymer/paper-menu-button": "^3.0.1",
+    "@vaadin/vaadin-accordion": "^1.2.0",
+    "@vaadin/vaadin-date-picker": "^4.3.0",
+    "@vaadin/vaadin-text-field": "^2.7.0",
+    "lit-element": "^2.3.1",
+    "lit-html": "^1.2.1"
+  }
+}

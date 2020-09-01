@@ -1,0 +1,10 @@
+node_modules/*
+dist/*
+node/*
+target/*
+.settings/*
+.classpath
+.project
+pom.xml
+webpack.config.js
+index.html
