@@ -42,20 +42,15 @@ export class BlogItemLit extends LitElement {
         
         
         <div id="container">
-        
             <div id="content">
-               
-                <div id="text">
+               <div id="text">
                     <p>
                         ${this.text}
                     </p>
-                   
-                   
                 </div>
                 <div id="header">
-                ${this.datum}
+                    ${this.datum}
                 </div>
-               
             </div>
         </div>
    

@@ -47,18 +47,15 @@ export class ListBlogLit extends LitElement {
     render() {
         return html`
         <div id="container">
-                <vaadin-accordion>
+            <vaadin-accordion>
                 <vaadin-accordion-panel>
-                <div slot="summary"><h2>HalloHallo</h2></div>
-                <blog-item datum="20.05.2020" text="hefiuhsfoiwjfunoWEFUHH"></blog-item>
-               
-            </vaadin-accordion-panel>
-
-            <vaadin-accordion-panel>
-            <div slot="summary"><h2>HalloHallo</h2></div>
-            <blog-item datum="17.07.2020" text="hefiuhsfoiwjfunoWEFUHH"></blog-item>
-           
-        </vaadin-accordion-panel>
+                    <div slot="summary"><h2>HalloHallo</h2></div>
+                        <blog-item datum="20.05.2020" text="hefiuhsfoiwjfunoWEFUHH"></blog-item>
+                </vaadin-accordion-panel>
+                <vaadin-accordion-panel>
+                    <div slot="summary"><h2>HalloHallo</h2></div>
+                        <blog-item datum="17.07.2020" text="hefiuhsfoiwjfunoWEFUHH"></blog-item>
+                </vaadin-accordion-panel>
             </vaadin-accordion>
         </div>
     `;

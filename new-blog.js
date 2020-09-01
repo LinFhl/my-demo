@@ -71,11 +71,11 @@ export class NewBlogLit extends LitElement {
             <vaadin-form-layout>
                 <vaadin-text-field placeholder="${this.labelTextfield}" label="" value=""></vaadin-text-field> <br>
                 <vaadin-text-area Placeholder="${this.labelTextarea}" label="" value=""></vaadin-text-area> <br>
-                <vaadin-button>
-                <iron-icon icon=""></iron-icon>
-                ${this.labelButton}
-            </vaadin-button>
-            </vaadin-form-layout>
+                    <vaadin-button>
+                        <iron-icon icon=""></iron-icon>
+                        ${this.labelButton}
+                    </vaadin-button>
+                </vaadin-form-layout>
         </div>
        
    
