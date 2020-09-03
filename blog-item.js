@@ -8,6 +8,7 @@ export class BlogItemLit extends LitElement {
         return {
             datum: {type: String},
             text: {type: String},
+            autor: {type: String}
 
         }
     }
@@ -16,6 +17,7 @@ export class BlogItemLit extends LitElement {
         super();
         this.datum = "";
         this.text = "";
+        this.autor = "";
     }
 
     static get styles() {
@@ -25,14 +27,27 @@ export class BlogItemLit extends LitElement {
             font-family: Arial, Helvetica, sans-serif;
         }
 
-        #header {
+    
+    
 
+
+       
+      
+
+        #content {
+            width:100%;
+            margin-left: auto;
+            margin-right: auto;
         }
-        
-        #text {
 
+        #footer {
+            width:100%;
+            text-align: right;
+            font-size: small;
+            font-weight: bold;
         }
        
+    
       
       `;
     }
@@ -48,8 +63,8 @@ export class BlogItemLit extends LitElement {
                         ${this.text}
                     </p>
                 </div>
-                <div id="header">
-                    ${this.datum}
+                <div id="footer">
+                ${this.getFooter(this.datum,this.autor)}
                 </div>
             </div>
         </div>
@@ -58,6 +73,12 @@ export class BlogItemLit extends LitElement {
     }
     firstUpdated(changedProperties) {
   
+    }
+
+    getFooter(footerDatum, footerAutor){
+
+
+        return footerAutor + " - " + footerDatum;
     }
 
 

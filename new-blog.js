@@ -35,7 +35,7 @@ export class NewBlogLit extends LitElement {
 
         #container {
             background-color: #f6f6f6;
-            width:100%;
+            width:90%;
             margin-left: auto;
             margin-right: auto;
             border: 1px solid;
@@ -52,22 +52,38 @@ export class NewBlogLit extends LitElement {
 
         vaadin-text-area {
 
+            
             height:250px;
         }
 
         vaadin-form-layout {
-            width: 50%;
+            width: 65%;
             margin: auto;
+            margin-left: auto;
+            margin-right: auto;
            
         }
-      
+    
+        vaadin-button{
+            margin: 15px;
+        }
+
+        h2{
+            background-color: #BDBDBD;
+            width:80%;
+            margin-left: auto;
+            margin-right: auto;
+            border-radius: 5px;
+            text-align: center;
+        }
+
       `;
     }
 
     render() {
         return html`
         <div id="container">
-            <h2 text-algin:"center">Neuer Blog-Artikel</h2>
+            <h2>Neuer Blog-Artikel</h2>
             <vaadin-form-layout>
                 <vaadin-text-field placeholder="${this.labelTextfield}" label="" value=""></vaadin-text-field> <br>
                 <vaadin-text-area Placeholder="${this.labelTextarea}" label="" value=""></vaadin-text-area> <br>
