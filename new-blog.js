@@ -13,6 +13,7 @@ export class NewBlogLit extends LitElement {
         return {
             labelTextfield: {type: String},
             labelTextarea: {type: String},
+            auTextfield: {type: String},
             labelButton: {type: String}
 
         }
@@ -22,6 +23,7 @@ export class NewBlogLit extends LitElement {
         super();
         this.labelTextfield = "";
         this.labelTextarea = "";
+        this.auTextfield = "";
         this.labelButton = "";
     }
 
@@ -46,14 +48,13 @@ export class NewBlogLit extends LitElement {
         }
     
         vaadin-text-field {
-    
-          margin: 10px;
+            margin: 10px;
+            width: 65%;
         }
 
         vaadin-text-area {
-
-            
             height:250px;
+            width: 65%;
         }
 
         vaadin-form-layout {
@@ -61,7 +62,6 @@ export class NewBlogLit extends LitElement {
             margin: auto;
             margin-left: auto;
             margin-right: auto;
-           
         }
     
         vaadin-button{
@@ -84,14 +84,15 @@ export class NewBlogLit extends LitElement {
         return html`
         <div id="container">
             <h2>Neuer Blog-Artikel</h2>
-            <vaadin-form-layout>
+            <div>
                 <vaadin-text-field placeholder="${this.labelTextfield}" label="" value=""></vaadin-text-field> <br>
                 <vaadin-text-area Placeholder="${this.labelTextarea}" label="" value=""></vaadin-text-area> <br>
+                <vaadin-text-field placeholder="${this.auTextfield}" label="" value=""></vaadin-text-field> <br>
                     <vaadin-button>
                         <iron-icon icon=""></iron-icon>
                         ${this.labelButton}
                     </vaadin-button>
-                </vaadin-form-layout>
+            
         </div>
        
    
