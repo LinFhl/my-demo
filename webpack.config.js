@@ -8,7 +8,7 @@ module.exports = () => {
         host: '0.0.0.0',
         port: '8081',
         proxy: [{
-            context: ['/suche'],
+            context: ['/blog'],
             target: 'http://localhost:8080',
         }],  
     },
