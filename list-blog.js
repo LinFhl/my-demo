@@ -7,14 +7,16 @@ export class ListBlogLit extends LitElement {
 
     static get properties() {
         return {
-            liste: {type: String},
-            eintraege: {type: String},
+           blogliste: {type: Array}
+
         }
     }
 
     constructor() {
         super();
-        this.liste = "";
+        this.blogliste=[{}];
+       
+        
        
     }
 
