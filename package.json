@@ -1,9 +1,9 @@
 {
-  "name": "@neufa/neufa-suche",
+  "name": "my-blog",
   "version": "1.0.0-alpha.1",
   "description": "Demo - Demo Web Components",
   "keywords": [],
-  "author": "dj schulze",
+  "author": "linda fahl",
   "license": "undefined",
   "scripts": {
     "dev": "webpack-dev-server --env.mode development",
@@ -14,7 +14,9 @@
     "registry": "http://dev-tools.int.dfg.de/nexus/repository/dfg-npm/"
   },
   "files": [
-    "my-demo.js"
+    "blog-item.js",
+    "list-nlog.js",
+    "new-blog"
   ],
   "devDependencies": {
     "@webcomponents/webcomponentsjs": "^2.4.3",
