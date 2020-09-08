@@ -68,12 +68,17 @@ export class ListBlogLit extends LitElement {
 
     render() {
         return html`
+        
+
+
         <div id="container">
-        <h2>Artikel</h2>${this.blogliste.map(blogEintrag =>{`<h3> ${blogEintrag.autor}</h3>`})}
-            <vaadin-accordion>${this.blogliste.map(blogEintrag =>{
-                `<vaadin-accordion-panel>
-                <div slot="summary"><h3>Blogartikel 1</h3></div>
-                    <blog-item autor="Juso Budo" datum="20.05.2020" text="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, 
+        <h2>Artikel</h2>
+           
+            <vaadin-accordion>
+            ${this.blogliste.map((blogEintrag) => 
+                html`<vaadin-accordion-panel>
+                       <div slot="summary"><h3>Blogartikel 1</h3></div>
+                <blog-item autor="Juso Budo" datum="20.05.2020" text="Lorem ipsum dolor sit amet, consetetur sadipscing elitr, 
                     sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. 
                     At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata 
                     sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, 
@@ -81,7 +86,7 @@ export class ListBlogLit extends LitElement {
                     At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata 
                     sanctus est Lorem ipsum dolor sit amet."</blog-item>
             </vaadin-accordion-panel>`
-                 })}
+                 )}
            
             </vaadin-accordion>
         </div>
