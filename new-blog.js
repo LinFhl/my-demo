@@ -86,7 +86,7 @@ export class NewBlogLit extends LitElement {
             <h2>Neuer Blog-Artikel</h2>
             <div>
                 <vaadin-text-field id= "titelFieldId" placeholder="${this.labelTextfield}" label="" value=""></vaadin-text-field> <br>
-                <vaadin-text-area id="textAreaId" Placeholder="${this.labelTextarea}" label="" value=""></vaadin-text-area> <br>
+                <vaadin-text-area id="textAreaFieldId" Placeholder="${this.labelTextarea}" label="" value=""></vaadin-text-area> <br>
                 <vaadin-text-field id="autorFieldId" placeholder="${this.auTextfield}" label="" value=""></vaadin-text-field> <br>
                     <vaadin-button @click="${this.saveBlog}">
                         <iron-icon icon=""></iron-icon>
@@ -112,7 +112,8 @@ export class NewBlogLit extends LitElement {
         headers: {
             'Content-Type': 'application/json'
         },
-        body: '{"titel":"' + titelField.value + '","blogText":"' + textField.value + '", "autor":"' + autorField.value + '"}' 
+        
+        body: '{"titel":"' + titelField.value + '", "blogtext":"' + textField.value + '", "autor":"' + autorField.value + '"}' 
 
         });
 
