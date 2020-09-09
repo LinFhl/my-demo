@@ -85,12 +85,13 @@ export class NewBlogLit extends LitElement {
         <div id="container">
             <h2>Neuer Blog-Artikel</h2>
             <div>
-                <vaadin-text-field placeholder="${this.labelTextfield}" label="" value=""></vaadin-text-field> <br>
-                <vaadin-text-area Placeholder="${this.labelTextarea}" label="" value=""></vaadin-text-area> <br>
-                <vaadin-text-field placeholder="${this.auTextfield}" label="" value=""></vaadin-text-field> <br>
-                    <vaadin-button>
+                <vaadin-text-field id= "titelFieldId" placeholder="${this.labelTextfield}" label="" value=""></vaadin-text-field> <br>
+                <vaadin-text-area id="textAreaId" Placeholder="${this.labelTextarea}" label="" value=""></vaadin-text-area> <br>
+                <vaadin-text-field id="autorFieldId" placeholder="${this.auTextfield}" label="" value=""></vaadin-text-field> <br>
+                    <vaadin-button @click="${this.saveBlog}">
                         <iron-icon icon=""></iron-icon>
                         ${this.labelButton}
+
                     </vaadin-button>
             
         </div>
@@ -100,6 +101,25 @@ export class NewBlogLit extends LitElement {
     }
     firstUpdated(changedProperties) {
     
+    }
+
+    async saveBlog() {
+        const titelField = this.shadowRoot.getElementById('titelFieldId');
+        const textField = this.shadowRoot.getElementById('textAreaFieldId'); 
+        const autorField = this.shadowRoot.getElementById('autorFieldId');  
+        const response = await fetch(`/blog/api/blog`, {
+        method: 'POST', 
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: '{"titel":"' + titelField.value + '","blogText":"' + textField.value + '", "autor":"' + autorField.value + '"}' 
+
+        });
+
+        titelField.value = "";
+
+        location.reload();
+
     }
 
 
