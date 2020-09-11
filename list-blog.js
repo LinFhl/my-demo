@@ -1,13 +1,18 @@
 import { LitElement, html, css} from 'lit-element';
 import '@vaadin/vaadin-text-field';
 import '@vaadin/vaadin-accordion';
+import '@vaadin/vaadin-button';
+import '@vaadin/vaadin-form-layout';
+
 
 
 export class ListBlogLit extends LitElement {
 
     static get properties() {
         return {
-           blogliste: {type: Array}
+           blogliste: {type: Array},
+           
+
 
         }
     }
@@ -15,6 +20,7 @@ export class ListBlogLit extends LitElement {
     constructor() {
         super();
         this.blogliste=[{}];
+        
        
         
        
@@ -36,6 +42,7 @@ export class ListBlogLit extends LitElement {
             border-radius: 25px;
             border-color: #b3b3b3;
             border-style: ridge;
+            text-align: center;
 
         }
         
@@ -60,6 +67,11 @@ export class ListBlogLit extends LitElement {
             margin-right: auto;
 
         }
+
+        vaadin-button {
+            margin: 15px;
+           
+        }
         
    
       
@@ -73,16 +85,17 @@ export class ListBlogLit extends LitElement {
 
         <div id="container">
         <h2>Artikel</h2>
-           
+        
             <vaadin-accordion>
             ${this.blogliste.map((blogEintrag) => 
                 html`<vaadin-accordion-panel>
-                       <div slot="summary"><h3>${blogEintrag.id} ${blogEintrag.titel}</h3></div>
-                <blog-item autor="${blogEintrag.autor}" datum="${blogEintrag.datum}" text="${blogEintrag.blogtext}"</blog-item>
-            </vaadin-accordion-panel>`
+                        <div slot="summary"><h3> ${blogEintrag.titel}</h3></div>
+                        <blog-item id="${blogEintrag.id}" autor="${blogEintrag.autor}" datum="${blogEintrag.datumAsString}" text="${blogEintrag.blogtext}"</blog-item>
+                    </vaadin-accordion-panel>`
                  )}
-           
             </vaadin-accordion>
+           
+           
         </div>
     `;
     }
@@ -98,6 +111,7 @@ export class ListBlogLit extends LitElement {
         });
     }
 
+  
    
 
 }

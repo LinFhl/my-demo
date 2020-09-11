@@ -8,7 +8,8 @@ export class BlogItemLit extends LitElement {
         return {
             datum: {type: String},
             text: {type: String},
-            autor: {type: String}
+            autor: {type: String},
+            id: {type: String}
 
         }
     }
@@ -18,6 +19,7 @@ export class BlogItemLit extends LitElement {
         this.datum = "";
         this.text = "";
         this.autor = "";
+        this.id = "";
     }
 
     static get styles() {
@@ -58,10 +60,14 @@ export class BlogItemLit extends LitElement {
         
         <div id="container">
             <div id="content">
-               <div id="text">
-                    <p>
-                        ${this.text}
-                    </p>
+                
+                <div id="text">
+                <p>
+                    ${this.text}
+                </p>
+                <vaadin-button @click="${this.deleteBlog}">
+                <iron-icon icon="vaadin:trash"></iron-icon>
+                </vaadin-button>
                 </div>
                 <div id="footer">
                 ${this.getFooter(this.datum,this.autor)}
@@ -79,6 +85,15 @@ export class BlogItemLit extends LitElement {
 
 
         return footerAutor + " - " + footerDatum;
+    }
+
+    async deleteBlog() {
+     
+        const response = await fetch(`/blog/api/blog/blog/` + this.id ,{ 
+        method: 'DELETE'});
+
+        location.reload();
+
     }
 
 

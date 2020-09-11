@@ -56,17 +56,11 @@ export class NewBlogLit extends LitElement {
             height:250px;
             width: 65%;
         }
-
-        vaadin-form-layout {
-            width: 65%;
-            margin: auto;
-            margin-left: auto;
-            margin-right: auto;
-        }
     
         vaadin-button{
             margin: 15px;
         }
+
 
         h2{
             background-color: #BDBDBD;
@@ -84,15 +78,13 @@ export class NewBlogLit extends LitElement {
         return html`
         <div id="container">
             <h2>Neuer Blog-Artikel</h2>
-            <div>
                 <vaadin-text-field id= "titelFieldId" placeholder="${this.labelTextfield}" label="" value=""></vaadin-text-field> <br>
                 <vaadin-text-area id="textAreaFieldId" Placeholder="${this.labelTextarea}" label="" value=""></vaadin-text-area> <br>
                 <vaadin-text-field id="autorFieldId" placeholder="${this.auTextfield}" label="" value=""></vaadin-text-field> <br>
-                    <vaadin-button @click="${this.saveBlog}">
-                        <iron-icon icon=""></iron-icon>
-                        ${this.labelButton}
-
-                    </vaadin-button>
+                <vaadin-button @click="${this.saveBlog}">
+                    <iron-icon icon=""></iron-icon>
+                    ${this.labelButton}
+                </vaadin-button>
             
         </div>
        
